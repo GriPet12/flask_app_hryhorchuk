@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, redirect, url_for
 
 app = Flask(__name__)
 
@@ -21,6 +21,13 @@ def greetings(name):
     year = 2024 - age
 
     return f"Welcome, {name}  {year}"
+
+@app.route("/admin")
+def admin():
+    to_url = "/hi/administrator?age=45"
+    to_url = url_for("greetings", name="administrator", age=45, _external=True)      # "/hi/administrator?age=45"
+    print(to_url)
+    return redirect(to_url)
 
 if __name__ == '__main__':
     app.run()
