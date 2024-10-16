@@ -14,10 +14,13 @@ def home():
 
     return f"This is your homepage :) - {agent} "
 
-@app.route('/hi/<string:name>/<int:age>')
-def hi(name, age):
+@app.route("/hi/<string:name>")   #/hi/ivan?age=45&q=fdfdf
+def greetings(name):
     name = name.upper()
-    return f"Hello {name} - {age}"
+    age = request.args.get("age", 0, int)
+    year = 2024 - age
+
+    return f"Welcome, {name}  {year}"
 
 if __name__ == '__main__':
     app.run()
