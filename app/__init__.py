@@ -3,3 +3,6 @@ app = Flask(__name__)
 app.config.from_pyfile("../config.py")
 
 from . import view
+
+from app.post import post_bp
+app.register_blueprint(post_bp)

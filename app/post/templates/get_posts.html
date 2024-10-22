@@ -10,7 +10,7 @@
 
     <p>{{ post.get('content') }}</p>
 
-    <a href="/posts">Return posts</a>
+    <a href="{{ url_for("post.get_posts") }}">Return posts</a>
 
 </body>
 </html>
