@@ -1,8 +1,5 @@
-from flask import Flask, request, redirect, url_for, render_template, abort
-
-app = Flask(__name__)
-app.config.from_pyfile("config.py")
-
+from flask import request, redirect, url_for, render_template, abort
+from . import app
 
 @app.route('/')
 def hello_world():
@@ -45,6 +42,3 @@ def get_post(id):
         abort(404)
     post = posts[id - 1]
     return render_template("det_posts.html", post=post)
-
-if __name__ == '__main__':
-    app.run()
