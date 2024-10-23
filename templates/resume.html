@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section id="about" class="container mt-5">
+    <h2>About Me</h2>
+    <p>I am a software developer...</p>
+    <img src="{{ url_for('static', filename='img/img.jpg') }}" alt="Profile" class="img-fluid" width="300" height="300">
+</section>
+
+<section id="education" class="container mt-5">
+    <h2>Education</h2>
+    <ul>
+        <li>Bachelor in Computer Science</li>
+        <li>Master in Software Engineering</li>
+    </ul>
+</section>
+
+<section id="skills" class="container mt-5">
+    <h2>Skills</h2>
+    <ul>
+        <li>Python, Flask</li>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Git, Docker</li>
+    </ul>
+</section>
+
+<section id="experience" class="container mt-5">
+    <h2>Projects</h2>
+    <p>Various projects...</p>
+</section>
+{% endblock %}
